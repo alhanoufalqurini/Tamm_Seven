@@ -1,0 +1,692 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: 'Tajawal', Arial, Helvetica, sans-serif;
+}
+
+header {
+    background-color: #194370;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+    padding: 0 1em;
+}
+
+.open {
+    color: #c1a268;
+    font-size: 30px;
+    cursor: pointer;
+    margin-left: 590px;
+}
+
+.nav {
+    width: 100%;
+    overflow-x: hidden;
+    height: 100vh;
+    z-index: 1;
+    position:fixed;
+    background-color: rgba(34, 65, 93, 0.9);
+    transition: 0.5s;
+    display:none;
+}
+
+.nav a {
+    clear: left;
+    color: white;
+    font-size: 22px;
+    display: block;
+    text-align: center;
+    padding: 1em 0;
+    transition: 0.3s;
+}
+
+.close {
+    float: left;
+    margin: 1em 0 0 1em;
+}
+
+.nav a:not(:first-child):hover {
+    background: #c1a268;
+    
+}
+
+#navbar {
+    display: flex;
+    align-items: center;
+}
+
+
+#navbar img {
+    width: 100px;
+    margin-left: 550px;
+}
+/* تنسيق المسافة بين الأيقونتين */
+#navbar i.fa-solid {
+    margin-right: 15px; /* يمكن استخدام margin-left أيضًا حسب التصميم */
+}
+/*
+.user-icon {
+    font-size: 30px;
+    color: #FFD700; 
+    cursor: pointer;
+    padding: 10px;
+    margin-right: 20px;
+}*/
+/* تنسيق النموذج */
+/* تنسيق النموذج */
+.login-form {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    text-align: center;
+    width: 300px; /* تعديل حسب الحاجة */
+}
+
+.login-form h2 {
+    margin-bottom: 20px;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+}
+
+.login-form button {
+    background-color: #c1a268;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.login-form button:hover {
+    background-color: #af8f58;
+}
+
+.login-form .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #aaa;
+}
+#part4 {
+    direction: rtl;
+}
+
+.ttt h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    
+}
+.gallery-container {
+    position: relative;
+    width: calc(300px * 3 + 2rem * 2); /* عرض الحاوية لعرض 3 عناصر مع فجوة بينهما */
+    margin: 0 auto;
+    overflow: hidden; /* مخفي للعناصر الزائدة */
+}
+
+.gallery {
+    display: flex;
+    gap: 2rem; /* المسافة بين العناصر */
+    overflow-x: auto; /* تمكين التمرير الأفقي */
+    scroll-behavior: smooth; /* تفعيل التمرير السلس */
+    /* تأكد من عدم وجود overflow-x: hidden; */
+}
+
+.container {
+    min-width: 300px; /* عرض البوكس */
+    box-sizing: border-box; /* لتضمين الحشو والحدود في العرض */
+}
+
+.box {
+    position: relative;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.box img {
+    width: 100%;
+    height: auto;
+}
+
+.text {
+    padding: 15px;
+    text-align: center;
+}
+
+.button {
+    text-align: center;
+    margin: 15px;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+.arrow i {
+    font-size: 24px;
+    color: #c1a268; /* لون السهم */
+}
+
+
+/* من نحن */
+#title h2 {
+    color: #194370;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 39px;
+    text-align: right;
+    margin: 2em;
+    padding: 6px;
+}
+
+#p {
+    color: #0a0a0a;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 23px;
+    text-align: right;
+    margin: 2em;
+    padding-top: 3px;
+}
+
+#ti h2 {
+    color: #194370;
+    font-size: 39px;
+    text-align: right;
+    margin-bottom: auto;
+
+    margin-right: -10em; /* توحيد الهامش الأيمن */
+    padding: 6px;
+}
+
+#menu {
+    background: #ffffff;
+    padding: 5rem 0;
+    text-align: center;
+}
+/* الخدمات الميدانية */
+#menu .ti h2 {
+    color: #194370;
+    font-size: 39px;
+    text-align: right;
+    margin-bottom: auto;
+
+    margin-right: 1.5em; /* توحيد الهامش الأيمن */
+    padding: 6px;
+}
+
+#menu .title p {
+    color: #0b0b0b;
+    font-weight: 500;
+}
+
+#menu .menu-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#menu .menu-items .menu-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px;
+}
+
+#menu .menu-items .menu-item img {
+    width: 80px;
+    margin-right: 20px;
+    border-radius: 50%;
+}
+
+#menu .menu-items .menu-item h3 {
+    color: #383848;
+    border-bottom: 1px dashed #c2bdbd;
+    padding-bottom: 10px;
+    position: relative;
+}
+
+#menu .menu-items .menu-item span {
+    position: absolute;
+    right: 0px;
+    top: 0;
+}
+
+#menu .menu-items .menu-item p {
+    margin-top: 10px;
+}
+
+#menu .btn {
+    display: block;
+    margin: auto;
+    border: none;
+    margin-top: 30px;
+}
+/* الخدمات الالكترونية */
+#mmenu .tip h2 {
+    color: #194370;
+    font-size: 39px;
+    text-align: right;
+    margin-bottom: auto;
+    margin-right: 1.5em; /* توحيد الهامش الأيمن */
+    padding: 6px;
+}
+
+/**********/
+#mmenu {
+    background: #ffffff;
+    padding: 5rem 0;
+    text-align: center;
+}
+
+#mmenu .title h2 {
+    color: #383848;
+}
+
+#mmenu .title p {
+    color: #9a9a9a;
+    font-weight: 500;
+}
+
+#mmenu .mmenu-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#mmenu .mmenu-items .mmenu-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px;
+}
+
+#mmenu .mmenu-items .mmenu-item img {
+    width: 80px;
+    margin-right: 20px;
+    border-radius: 50%;
+    
+}
+
+#mmenu .mmenu-items .mmenu-item h3 {
+    color: #383848;
+    border-bottom: 1px dashed #c2bdbd;
+    padding-bottom: 10px;
+    position: relative;
+    text-align: center;
+}
+
+#mmenu .mmenu-itemss .mmenu-item span {
+    position: absolute;
+    right: 0px;
+    top: 0;
+}
+
+#mmenu .mmenu-items .mmenu-item p {
+    margin-top: 10px;
+}
+
+#mmenu .btn {
+    display: block;
+    margin: auto;
+    border: none;
+    margin-top: 30px;
+}
+/* المنتجات*/
+#part4 .ttt h2 {
+    color: #194370;
+    font-size: 39px;
+    text-align: right;
+    margin-bottom: auto;
+    margin-right: 1.5em; /* توحيد الهامش الأيمن */
+    padding: 6px;
+}
+
+.text{
+    padding: 20px;
+}
+.text h3{
+font-size: 20px;
+color: #194370;
+}
+.text p{
+    font-size: 14px;
+    line-height: 18px;
+    margin: 10px 0 10px 0;
+}
+.text h2{
+font-size: 18px;
+color: #194370;
+}
+
+.rate i{
+    font-size: 10px;
+    color: #fbaf44;
+    margin-bottom: 10px;
+}
+.rate i:nth-child(4),
+.rate i:nth-child(5){
+    color: #bdc7cf;
+}
+.button{
+    background:#c1a268;
+    padding: 15px;
+}
+button{
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    color: #f1f1f1 ;
+    font-size: 20px;
+    transition: 0.3s ease;
+    background-color: #c1a268;
+
+}
+.button button:hover {
+    background-color: #af8f58 /* اللون الجديد عند المرور على الزر */
+}
+
+#mnuu {
+    display: flex;
+    justify-content: right;
+    align-items: right;
+    margin: 56px 10px 22px 66660px;
+    
+}
+#footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #194370;
+  /*  margin-top: 2rem; */
+    
+}
+
+.footer-content {
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.footer-title {
+    font-size: 24px;
+    color: #ffffff;
+    padding: 10px;
+
+ 
+}
+/* قسم السلة */
+.cart {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 300px;
+    height: 100vh;
+    background-color: #f9f9f9;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.cart.active {
+    transform: translateX(0);
+}
+
+.cart-header .close {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.cart-items {
+    padding: 20px;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.cart-item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.cart-item-details {
+    flex: 1;
+}
+
+.cart-item-details h3 {
+    font-size: 18px;
+    color: #194370;
+    margin-bottom: 5px;
+}
+
+.cart-item-details p {
+    font-size: 14px;
+    color: #777;
+}
+
+.cart-item-price {
+    font-size: 16px;
+    color: #c1a268;
+}
+
+.cart-footer {
+    padding: 15px;
+    background-color: #fff;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.cart-footer button {
+    background-color: #c1a268;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.cart-footer button:hover {
+    background-color: #af8f58;
+}
+
+/* إضافة التنسيقات الخاصة بصفحة السلة */
+.cart-container {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.cart-container h2 {
+    text-align: center;
+    color: #194370;
+    margin-bottom: 20px;
+}
+
+/* تنسيقات عدد المنتجات في السلة */
+.cart-icon {
+    position: relative;
+    display: inline-block;
+}
+
+.cart-count {
+    position: absolute;
+    top: -10px;  /* تعديل موضع العد حسب رغبتك */
+    right: -10px;  /* تعديل موضع العد حسب رغبتك */
+    background-color: #c1a268;
+    color: white;
+    border-radius: 50%;
+    padding: 5px 10px;  /* تعديل حجم الدائرة حسب رغبتك */
+    font-size: 14px;
+    display: none;
+    text-align: center;
+    line-height: 1;
+}
+
+.cart-title {
+    color: #194370;
+    font-size: 39px;
+    text-align: right;
+    margin-bottom: auto;
+    margin-right: 1.5em; /* توحيد الهامش الأيمن */
+    padding: 1em 0;
+}
+
+.cart-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.cart-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    width: 80%;
+    margin: 10px 0;
+    padding: 20px;
+  
+}
+
+.cart-item h3 {
+    color: #194370;
+}
+.cart-item p {
+    color: #666666;
+}
+.cart-item img {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+}
+
+.details {
+    flex-grow: 1;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+}
+
+.quantity-btn {
+    background-color: #c1a268;
+    color: #ffffff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.quantity-btn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.quantity {
+    margin: 0 10px;
+}
+
+.remove-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #c1a268;
+    font-size: 1.2em;
+    
+}
+
+.checkout-btn {
+    display: block;
+    width: 500px;/*200*/
+    margin: 200px auto;
+    margin-top: 100px;
+    padding: 10px;
+    background-color: #c1a268;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.5em;/*1.ز2*/
+    cursor: pointer;
+  
+}
+
+.checkout-btn:hover {
+    background-color: #a68047;
+}
+.total-amount {
+    font-size: 1.2em;
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+    color: #194370;
+}
+.cart-summary {
+    border: 2px solid #c1a268; /* لون الإطار */
+    border-radius: 8px; /* زاوية مستديرة */
+    padding: 50px; /* المسافة الداخلية */
+    margin: 20px auto; /* المسافة من الأعلى */
+    background-color: #f9f9f9; /* لون الخلفية */
+    text-align: center; /* محاذاة النص في الوسط */
+    align-items: center;
+    width: 950px; /* تحديد عرض المربع */
+}
+
+.cart-summary p {
+    font-size: 25px; /* حجم الخط */
+    color: #194370; /* لون الخط */
+    margin: 0; /* إزالة الهوامش */
+}
+

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <title>سلة التسوق</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div id="navbar">
+            
+            <i class="fa-solid fa-user" style="font-size:35px;color:#c1a268; cursor: pointer;" onclick="openLoginForm()"></i>
+            <a href="cart.html" class="cart-icon">
+                <i class="fa-solid fa-basket-shopping" style="font-size:35px;color:#c1a268;"></i>
+                <span id="cart-count" class="cart-count"></span>
+            </a>
+            <div id="logo">
+                <img src="./00.png" alt="Logo">
+            </div>
+            <div class="open" onclick="openNav()">&#9776;</div>
+        </div>
+    </header>
+    <div class="nav" id="nav">
+        <a href="javascript:void(0)" class="close" onclick="closeNav()">&times;</a>
+        <a href="index.html">من نحن</a> <!-- افترض أن index.html هو الملف الرئيسي في نفس المجلد -->
+        <a href="index.html">الخدمات الميدانية</a>
+        <a href="index.html">الخدمات الإلكترونية</a>
+        <a href="index.html">المنتجات</a>
+        <a href="cart.html" class="active">سلة التسوق</a> <!-- يتم تعيين "active" إذا كنت في نفس الصفحة -->
+        <a href="#footer">تواصل معنا</a>
+    </div>
+    
+    </div>
+    <!-- نموذج تسجيل الدخول -->
+    <div id="loginForm" class="login-form">
+        <span class="close" onclick="closeLoginForm()" style="position: absolute; top: 10px; right: 10px;">&times;</span>
+
+        <h2>تسجيل الدخول</h2>
+        <form id="login">
+            <input type="text" id="username" placeholder="رقم الجوال " required>
+            <input type="password" id="password" placeholder="رمز التحقق " required>
+            <button type="submit"> الدخول</button>
+        </form>
+    </div>
+
+    <!-- باقي المحتوى للصفحة -->
+    <main>
+        <!-- المحتوى الخاص بسلة التسوق -->
+        <section id="cart">
+            <div class="tt">
+                <h2 class="cart-title">سلة التسوق</h2>
+            </div>
+            <div class="cart-items" id="cart-items">
+
+                <!-- عناصر السلة ستظهر هنا -->
+            </div>
+            <!-- عنصر لعرض التكلفة الإجمالية -->
+<div id="total-amount" class="total-amount">
+    <div class="cart-summary">
+    <p id="total-cost">التكلفة الكلية: رس 0</p>
+</div>
+</div>
+            <button class="checkout-btn">الدفع</button>
+        </section>
+    </main>
+    <footer id="footer">
+        <div class="footer-content">
+            <h3 class="footer-title">
+              
+            <h3>تواصل معنا عبر</h3>
+            <a href="https://x.com/ksatamm?s=21&t=HagB0NQEdiIGiNyw9e6ixw"><i class="fa-brands fa-x-twitter"style="font-size:35px;color:white;"></i> </a>
+           
+            <h6>All rights reserved © 2024</h6>
+        </div>
+    </footer>
+    <script src="Tamm.js"></script>
+</body>
+</html>

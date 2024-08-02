@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"  />
+    <link rel="stylesheet" href="cart.html"> 
+
+
+
+    <link rel="icon" type="image/x-icon" href="./00.png">
+    <link rel="stylesheet" href="style.css">
+    <title>Tamm seven</title>
+</head>
+<body>
+    <header>
+      <!-- جزء من الهيدر -->
+      <div id="navbar">
+        <i class="fa-solid fa-user" style="font-size:35px;color:#c1a268; cursor: pointer;" onclick="openLoginForm()"></i>
+        <a href="cart.html" class="cart-icon">
+            <i class="fa-solid fa-basket-shopping" style="font-size:35px;color:#c1a268;"></i>
+            <span id="cart-count" class="cart-count"></span>
+        </a>
+        <div id="logo">
+            <img src="./00.png" alt="Logo">
+        </div>
+        <div class="open" onclick="openNav()">&#9776;</div>
+    </div>
+       
+        <!-- Login Form -->
+        <div id="loginForm" class="login-form">
+            <form>
+                <h2>تسجيل الدخول</h2>
+                <input type="text" placeholder="رقم الجوال" required>
+                <input type="password" placeholder="رمز التحقق" required>
+                <button type="submit">الدخول</button>
+                <span class="close" onclick="closeLoginForm()">&times;</span>
+            </form>
+        </div>
+        
+        
+    </header>
+
+    <div class="nav" id="nav">
+        <a href="javascript:void(0)" class="close" onclick="closeNav()">&times;</a>
+        <a href="#title">من نحن</a>
+        <a href="#menu">الخدمات الميدانية</a>
+        <a href="#mmenu">الخدمات الإلكترونية</a>
+        <a href="#part4">المنتجات</a>
+        <a href="cart.html">سلة التسوق</a>
+        <a href="#footer">تواصل معنا</a>
+    </div>
+
+  
+
+    <section id="title">
+        <h2>من نحن</h2> 
+    </section>
+    <section id="p">
+        <p>
+            موقع ( تم 7 ) هو شركة متخصصة في تقديم الخدمات اللوجستية الحديثة وتنفيذها بما يخدم الموروث الشعبي خاصة في مجال النقل والتحميل والتتبع للإبل والخيول والمواشي بطرق مبتكرة وآمنة وحديثة، بالإعتماد على التقنية والذكاء الاصطناعي 
+            بما يتوافق مع الأنظمة المعمول بها والمعتمدة من قبل وزارة النقل بالإضافة الى توفير خدمات البيطرة والحلاقة والاعلاف وموارد المياه وتأجير المخيمات وإقامة المزادات والخريطة التفاعلية، مما يساهم في حوكمة القطاع 
+            واستدامته من خلال توفير الوقت والمال والجهد للعميل ومقدم الخدمة بالإضافة الى أن الشركة تقوم عبر فرعها (أبشر وتم للخدمات اللوجستية) بتنظيم المهرجانات ميدانيا وهي مملوكة بالكامل لشركة الوصية لتقنية المعلومات المختصة في تطوير التطبيقات والبرامج الإلكترونية وتقديم الدورات في المجالات التقنية
+       </p>
+       
+    </section>
+
+    <section id="menu">
+        <div class="ti">
+            <h2>الخدمات الميدانية</h2>
+        </div>
+        <div class="menu-items">
+            <div class="menu-items-left">
+           
+            <div class="menu-item">
+                <img src="./aa.jpg" alt="ra">
+                <div>
+                <h3>الفرز</h3>
+                <p>تصنيف البضائع والمواد بدقة لتسهيل عمليات الشحن والتوصيل بأمان وفعالية
+
+
+
+                </p>
+                </div>
+                </div>
+                <div class="menu-item">
+                    <img src="./aa.jpg" alt="ay">
+                    <div>
+                    <h3>التوجيه</h3>
+                    <p>توفير إرشادات وتوجيهات للأفراد أو الزوار حول الموقع والخدمات المتاحة </p>
+                    </div>
+                    </div><div class="menu-item">
+                        <img src="./aa.jpg" alt="a">
+                        <div>
+                        <h3>الإحصاء</h3>
+                        <p>  جمع وتحليل البيانات لتوليد معلومات استراتيجية دقيقة وإدارة فعالة للعمليات
+
+                        </p>
+                        </div>
+                        </div>
+                            
+                            <div class="menu-item">
+                                <img src="./aa.jpg" alt="a">
+                                <div>
+                                <h3> تنظيم الدخول والخروج </h3>
+                                <p>إدارة عمليات الدخول والخروج بفعالية وتنظيم التدفقات لضمان الأمان</p>
+                                </div>
+                                </div>
+            </div>
+            <div class= menu-items-right>
+              
+                <div class="menu-item">
+                    <img src="./aa.jpg" alt="a">
+                    <div>
+                    <h3>التنظيف</h3>
+                    <p> تنظيف الشاحنات والمعدات بشكل شامل للحفاظ على النظافة والصحة العامة</p>
+                    </div>
+                    </div>
+                    <div class="menu-item">
+                        <img src="./aa.jpg" alt="a">
+                        <div>
+                        <h3> التعقيم </h3>
+                        <p> استخدام تقنيات متقدمة لقتل الجراثيم وتحسين النظافة والسلامة بفعالية</p>
+                        </div>
+                        </div><div class="menu-item">
+                            <img src="./aa.jpg" alt="a">
+                            <div>
+                            <h3>فحص سلامة الشاحنات </h3>
+                            <p> فحوصات دورية للشاحنات للتحقق من سلامتها وامتثالها لمعايير الأمان</p>
+                            </div>
+                            </div>
+                            <div class="menu-item">
+                                <img src="./aa.jpg" alt="a">
+                                <div>
+                                <h3> إصدار التصاريح والوثائق  </h3>
+                                <p>توفير الأوراق والمستندات اللازمة والامتثال للمعايير القانونية والتنظيمية
+                                </p>
+                                </div>
+                                </div>
+                               
+                </div></div>
+            </div>
+    
+            </div>
+            </section>
+            <section id="mmenu">
+                <div class="tip">
+                    <h2> الخدمات الإلكترونية</h2>
+                </div>
+            <div class="mmenu-items">
+               
+                <div class="mmenu-items-left">
+                <div class="mmenu-item">
+                <img src="./aa.jpg" alt="aa">
+                <div>
+                <h3> النقل</h3>
+                <p>حلول نقل مبتكرة وآمنة وموثوقة لضمان وصول البضائع بسرعة وفعالية </p>
+                </div>
+                </div>
+                <div class="mmenu-item">
+                    <img src="./aa.jpg" alt="aa">
+                    <div>
+                    <h3>عمل بوليصة الشحن</h3>
+                    <p>خدمة سريعة وموثوقة لتسهيل عمليات الشحن و التوصيل ونقل البضائع</p>
+                    </div>
+                    </div>
+                    <div class="mmenu-item">
+                        <img src="./aa.jpg" alt="aa">
+                        <div>
+                        <h3>التتبع</h3>
+                        <p>تقنيات تتبع حديثة لمراقبة البضائع بدقة عالية ومعرفة مكانها بكل لحظة  </p>
+                        </div>
+                        </div><div class="mmenu-item">
+                            <img src="./aa.jpg" alt="aa">
+                            <div>
+                            <h3>البيطرة</h3>
+                            <p> خدمات طبية متخصصة لضمان صحة وسلامة الحيوانات أثناء النقل</p>
+                            </div>
+                            </div>
+                            <div class="mmenu-item">
+                                <img src="./aa.jpg" alt="aa">
+                                <div>
+                                <h3>الأعلاف</h3>
+                                <p>توفير أعلاف عالية الجودة لضمان راحة الحيوانات وتغذيتها الجيدة</p>
+                                </div>
+                                </div>
+                                <div class="mmenu-item">
+                                    <img src="./aa.jpg" alt="aa">
+                                    <div>
+                                    <h3>المزاد الإلكتروني </h3>
+                                    <p>منصة إلكترونية للمزادات توفر فرصة لبيع وشراء الحيوانات والمعدات </p>
+                                    </div>
+                                    </div>
+                </div>
+                <div class= mmenu-items-right>
+                    <div class="mmenu-item">
+                        <img src="./aa.jpg" alt="aa">
+                    <div>
+                    <h3>مواريد المياه </h3>
+                    <p>توفير موارد المياه اللازمة للحيوانات خلال عمليات النقل للشرب  </p>
+                    </div>
+                    </div>
+                    <div class="mmenu-item">
+                        <img src="./aa.jpg" alt="aa">
+                        <div>
+                        <h3>الحلاقة</h3>
+                        <p>خدمات الشعر والعناية بالحيوانات للحفاظ على نظافتها وصحتها</p>
+                        </div>
+                        </div>
+                        <div class="mmenu-item">
+                            <img src="./aa.jpg" alt="aa">
+                            <div>
+                            <h3>الخريطة التفاعلية </h3>
+                            <p> استخدام تقنيات الخرائط التفاعلية لتسهيل عملية التخطيط والتنظيم</p>
+                            </div>
+                            </div><div class="mmenu-item">
+                                <img src="./aa.jpg" alt="aa">
+                                <div>
+                                <h3>التغطيات الأعلامية</h3>
+                                <p>إعلام وتوعية حول خدمات الشركة المتعلقة بالقطاع اللوجستي</p>
+                                </div>
+                                </div>
+                                <div class="mmenu-item">
+                                    <img src="./aa.jpg" alt="aa">
+                                    <div>
+                                    <h3>تأجير المخيمات </h3>
+                                    <p>توفير كافة الخيارات السكنية بالمنطقة فنادق وكرفانات مخيمات
+                                    </p>
+                                    </div>
+                                    </div>
+                                    <div class="mmenu-item">
+                                        <img src="./aa.jpg" alt="aa">
+                                        <div>
+                                        <h3>البيع والشراء </h3>
+                                        <p>منصة للبيع والشراء تضمن عمليات تجارية سلسة وموثوقة</p>
+                                        </div>
+                                        </div>
+                    </div></div>
+                </div>
+        
+                </div>
+               
+                </section>
+                
+                <section id="part4">
+                    <div class="ttt">
+                        <h2>المنتجات</h2>
+                    </div>
+                    <div class="gallery-container">
+                        <button class="arrow prev"><i class="fas fa-chevron-left"></i></button>
+                        <div class="gallery">
+                            <!-- العناصر المتكررة -->
+                            <div class="container">
+                                <div class="box">
+                                    <img src="images/4.jpg" alt="product1">
+                                    <div class="text">
+                                        <h3>سجادة</h3>
+                                        <p></p>
+                                        <h2>رس ٤٠</h2>
+                                        <div class="rate">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <div class="button">
+                                        <button class="add-to-cart" data-product="سجادة" data-price="40" data-image="images/4.jpg">إضافة إلى السلة</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="box">
+                                    <img src="images/5.jpg" alt="product2">
+                                    <div class="text">
+                                        <h3>دولاب تخزين</h3>
+                                        <p></p>
+                                        <h2>رس ٤٩٩</h2>
+                                        <div class="rate">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <div class="button">
+                                        <button class="add-to-cart" data-product="دولاب تخزين" data-price="499" data-image="images/5.jpg">إضافة إلى السلة</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="box">
+                                    <img src="images/6.jpg" alt="product3">
+                                    <div class="text">
+                                        <h3>موقد غاز</h3>
+                                        <p></p>
+                                        <h2>رس ٥٠</h2>
+                                        <div class="rate">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <div class="button">
+                                        <button class="add-to-cart" data-product="موقد غاز" data-price="50" data-image="images/6.jpg">إضافة إلى السلة</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="box">
+                                    <img src="images/3.jpg" alt="product4">
+                                    <div class="text">
+                                        <h3>عزبة للرحلات</h3>
+                                        <p></p>
+                                        <h2>رس ١٦٠</h2>
+                                        <div class="rate">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <div class="button">
+                                        <button class="add-to-cart" data-product="عزبة للرحلات" data-price="160" data-image="images/3.jpg">إضافة إلى السلة</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="box">
+                                    <img src="images/66.png" alt="product5">
+                                    <div class="text">
+                                        <h3>غاز متنقل طبخ</h3>
+                                        <p></p>
+                                        <h2>رس ١٤٠</h2>
+                                        <div class="rate">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <div class="button">
+                                        <button class="add-to-cart" data-product="غاز متنقل طبخ" data-price="140" data-image="images/66.png">إضافة إلى السلة</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="box">
+                                    <img src="images/9.jpg" alt="product6">
+                                    <div class="text">
+                                        <h3>كرسي للرحلات</h3>
+                                        <p></p>
+                                        <h2>رس ١٧٥</h2>
+                                        <div class="rate">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <div class="button">
+                                        <button class="add-to-cart" data-product="كرسي للرحلات" data-price="175" data-image="images/9.jpg">إضافة إلى السلة</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="arrow next"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </section>
+                
+                
+                
+<footer id="footer">
+    <div class="footer-content">
+        <h3 class="footer-title">
+          
+        <h3>تواصل معنا عبر</h3>
+        <a href="https://x.com/ksatamm?s=21&t=HagB0NQEdiIGiNyw9e6ixw"><i class="fa-brands fa-x-twitter"style="font-size:35px;color:white;"></i> </a>
+       
+        <h6>All rights reserved © 2024</h6>
+    </div>
+</footer>
+        <script src="Tamm.js"></script>
+    </body>
+    </html>
+    
