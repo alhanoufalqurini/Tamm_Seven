@@ -9,19 +9,16 @@ function closeNav() {
 
 // فتح وإغلاق نموذج تسجيل الدخول
 function openLoginForm() {
-    var loginForm = document.getElementById('loginForm');
-    loginForm.style.display = 'block';
+    document.getElementById('loginForm').style.display = 'block';
 }
 
 function closeLoginForm() {
-    var loginForm = document.getElementById('loginForm');
-    loginForm.style.display = 'none';
+    document.getElementById('loginForm').style.display = 'none';
 }
 
 window.onclick = function(event) {
-    var loginForm = document.getElementById('loginForm');
-    if (event.target == loginForm) {
-        loginForm.style.display = 'none';
+    if (event.target == document.getElementById('loginForm')) {
+        closeLoginForm();
     }
 }
 
@@ -31,9 +28,11 @@ document.addEventListener("DOMContentLoaded", function() {
     const nextButton = document.querySelector('.next');
     const prevButton = document.querySelector('.prev');
 
+    if (!gallery || !nextButton || !prevButton) return;
+
     const containerWidth = document.querySelector('.container').offsetWidth;
     const numberOfBoxesToScroll = 3;
-    const gap = parseInt(getComputedStyle(document.querySelector('.gallery')).gap, 10);
+    const gap = parseInt(getComputedStyle(gallery).gap, 10);
     const scrollAmount = (containerWidth + gap) * numberOfBoxesToScroll;
 
     nextButton.addEventListener('click', () => {
@@ -53,13 +52,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const cartItemsContainer = document.getElementById('cart-items');
     const totalCostElement = document.getElementById('total-cost');
 
-    if (!cartItemsContainer) return; // تأكد من وجود العنصر
-    if (!totalCostElement) return; // تأكد من وجود العنصر
+    if (!cartCount || !cartItemsContainer || !totalCostElement) return;
 
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    let count = cart.reduce((total, item) => total + (item.quantity || 1), 0);
 
     function updateCartCount() {
+        const count = cart.reduce((total, item) => total + (item.quantity || 1), 0);
         cartCount.textContent = count;
         cartCount.style.display = count > 0 ? 'inline-block' : 'none';
     }
@@ -86,7 +84,6 @@ document.addEventListener('DOMContentLoaded', function() {
             `;
             cartItemsContainer.appendChild(itemElement);
 
-            // إضافة التعامل مع الأزرار داخل السلة
             const decreaseButton = itemElement.querySelector(".decrease");
             const increaseButton = itemElement.querySelector(".increase");
             const quantityElement = itemElement.querySelector(".quantity");
@@ -112,10 +109,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             removeButton.addEventListener("click", () => {
                 cart.splice(index, 1);
-                localStorage.setItem("cart", JSON.stringify(cart));
-                count--;
-                updateCartCount();
-                renderCartItems();
+                updateCart();
             });
 
             totalCost += item.price * quantity;
@@ -126,7 +120,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function updateCart() {
         localStorage.setItem('cart', JSON.stringify(cart));
-        count = cart.reduce((total, item) => total + (item.quantity || 1), 0);
         updateCartCount();
         renderCartItems();
     }
