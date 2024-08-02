@@ -59,11 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function updateCartCount() {
         cartCount.textContent = count;
-        if (count > 0) {
-            cartCount.style.display = 'inline-block';
-        } else {
-            cartCount.style.display = 'none';
-        }
+        cartCount.style.display = count > 0 ? 'inline-block' : 'none';
     }
 
     function renderCartItems() {
@@ -88,7 +84,6 @@ document.addEventListener('DOMContentLoaded', function() {
             `;
             cartItemsContainer.appendChild(itemElement);
 
-            // إضافة التعامل مع الأزرار داخل السلة
             const decreaseButton = itemElement.querySelector(".decrease");
             const increaseButton = itemElement.querySelector(".increase");
             const quantityElement = itemElement.querySelector(".quantity");
