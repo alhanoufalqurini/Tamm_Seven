@@ -50,6 +50,9 @@ document.addEventListener("DOMContentLoaded", function() {
 document.addEventListener('DOMContentLoaded', function() {
     const cartCount = document.getElementById('cart-count');
     const addToCartButtons = document.querySelectorAll('.add-to-cart');
+    const cartItemsContainer = document.getElementById('cart-items');
+    const checkoutBtn = document.querySelector('.checkout-btn');
+    const totalPriceElement = document.querySelector('.total-price');
 
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     let count = cart.length;
@@ -63,69 +66,83 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    function addToCart(product, price, image) {
-        cart.push({ product, price, image });
-        localStorage.setItem('cart', JSON.stringify(cart));
-        count++;
-        updateCartCount();
+    function renderCartItems() {
+        cartItemsContainer.innerHTML = "";
+        let totalPrice = 0;
+        cart.forEach(item => {
+            const itemElement = document.createElement("div");
+            itemElement.classList.add("cart-item");
+            itemElement.innerHTML = `
+                <img src="${item.image}" alt="${item.product}">
+                <div class="details">
+                    <h3>${item.product}</h3>
+                    <p class="cart-item-price">رس ${item.price}</p>
+                </div>
+                <div class="quantity-controls">
+                    <button class="quantity-btn decrease">-</button>
+                    <span class="quantity">${item.quantity}</span>
+                    <button class="quantity-btn increase">+</button>
+                </div>
+                <button class="remove-btn"><i class="fa-solid fa-trash-can"></i></button>
+            `;
+            cartItemsContainer.appendChild(itemElement);
+
+            // تحديث السعر الإجمالي
+            totalPrice += item.price * item.quantity;
+
+            // إضافة التعامل مع الأزرار داخل السلة
+            const decreaseButton = itemElement.querySelector(".decrease");
+            const increaseButton = itemElement.querySelector(".increase");
+            const quantityElement = itemElement.querySelector(".quantity");
+            const removeButton = itemElement.querySelector(".remove-btn");
+
+            decreaseButton.addEventListener("click", () => {
+                if (item.quantity > 1) {
+                    item.quantity--;
+                    quantityElement.textContent = item.quantity;
+                    localStorage.setItem("cart", JSON.stringify(cart));
+                    renderCartItems();
+                }
+            });
+
+            increaseButton.addEventListener("click", () => {
+                item.quantity++;
+                quantityElement.textContent = item.quantity;
+                localStorage.setItem("cart", JSON.stringify(cart));
+                renderCartItems();
+            });
+
+            removeButton.addEventListener("click", () => {
+                cart = cart.filter(cartItem => cartItem !== item);
+                localStorage.setItem("cart", JSON.stringify(cart));
+                count--;
+                updateCartCount();
+                renderCartItems();
+            });
+        });
+        totalPriceElement.textContent = `التكلفة الكلية: رس ${totalPrice}`;
     }
 
     addToCartButtons.forEach(button => {
         button.addEventListener('click', function() {
             const product = this.getAttribute('data-product');
-            const price = this.getAttribute('data-price');
+            const price = parseFloat(this.getAttribute('data-price'));
             const image = this.getAttribute('data-image');
-            addToCart(product, price, image);
+
+            const existingItem = cart.find(item => item.product === product);
+            if (existingItem) {
+                existingItem.quantity++;
+            } else {
+                cart.push({ product, price, image, quantity: 1 });
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            count = cart.length;
+            updateCartCount();
+            renderCartItems();
         });
     });
 
     updateCartCount(); // تحديث عدد المنتجات عند تحميل الصفحة
-
-    // مسح عداد السلة عند إغلاق الصفحة
-    window.addEventListener('beforeunload', function() {
-        localStorage.removeItem('cart');
-    });
-
-    // عرض المنتجات في صفحة السلة
-    const cartItemsContainer = document.getElementById('cart-items');
-    if (cartItemsContainer) {
-        cart.forEach(item => {
-            const cartItemElement = document.createElement('div');
-            cartItemElement.classList.add('cart-item');
-            cartItemElement.innerHTML = `
-                <img src="./${item.image}" alt="${item.product}">
-                <div class="cart-item-details">
-                    <h3>${item.product}</h3>
-                    <p class="cart-item-price">${item.price} ريال</p>
-                </div>
-                <div class="quantity-controls">
-                    <button class="quantity-btn" onclick="decreaseQuantity('${item.product}')">-</button>
-                    <span class="quantity">1</span>
-                    <button class="quantity-btn" onclick="increaseQuantity('${item.product}')">+</button>
-                </div>
-            `;
-            cartItemsContainer.appendChild(cartItemElement);
-        });
-    }
-
-    // التعامل مع تحديث الكميات
-    window.decreaseQuantity = function(product) {
-        // خفض الكمية للمنتج المحدد
-        const cartItem = cart.find(item => item.product === product);
-        if (cartItem && cartItem.quantity > 1) {
-            cartItem.quantity--;
-            localStorage.setItem('cart', JSON.stringify(cart));
-            location.reload();
-        }
-    };
-
-    window.increaseQuantity = function(product) {
-        // زيادة الكمية للمنتج المحدد
-        const cartItem = cart.find(item => item.product === product);
-        if (cartItem) {
-            cartItem.quantity++;
-            localStorage.setItem('cart', JSON.stringify(cart));
-            location.reload();
-        }
-    };
+    renderCartItems();
 });
