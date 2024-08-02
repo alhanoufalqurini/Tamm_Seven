@@ -51,19 +51,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const cartCount = document.getElementById('cart-count');
     const addToCartButtons = document.querySelectorAll('.add-to-cart');
     const cartItemsContainer = document.getElementById('cart-items');
-    const checkoutBtn = document.querySelector('.checkout-btn');
     const totalCostElement = document.getElementById('total-cost');
 
+    if (!cartItemsContainer) return; // تأكد من وجود العنصر
+    if (!totalCostElement) return; // تأكد من وجود العنصر
+
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    let count = cart.length;
+    let count = cart.reduce((total, item) => total + (item.quantity || 1), 0);
 
     function updateCartCount() {
         cartCount.textContent = count;
-        if (count > 0) {
-            cartCount.style.display = 'inline-block';
-        } else {
-            cartCount.style.display = 'none';
-        }
+        cartCount.style.display = count > 0 ? 'inline-block' : 'none';
     }
 
     function renderCartItems() {
@@ -77,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <img src="${item.image}" alt="${item.product}">
                 <div class="details">
                     <h3>${item.product}</h3>
-                    <p class="cart-item-price">رس ${item.price}</p>
+                    <p class="cart-item-price">سعر: ${item.price} رس</p>
                 </div>
                 <div class="quantity-controls">
                     <button class="quantity-btn decrease">-</button>
@@ -123,11 +121,13 @@ document.addEventListener('DOMContentLoaded', function() {
             totalCost += item.price * quantity;
         });
 
-        totalCostElement.textContent = التكلفة الكلية: رس ${totalCost.toFixed(2)};
+        totalCostElement.textContent = `التكلفة الكلية: رس ${totalCost.toFixed(2)}`;
     }
 
     function updateCart() {
         localStorage.setItem('cart', JSON.stringify(cart));
+        count = cart.reduce((total, item) => total + (item.quantity || 1), 0);
+        updateCartCount();
         renderCartItems();
     }
 
@@ -144,10 +144,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 cart.push({ product, price, image, quantity: 1 });
             }
 
-            localStorage.setItem('cart', JSON.stringify(cart));
-            count++;
-            updateCartCount();
-            renderCartItems();
+            updateCart();
         });
     });
 
