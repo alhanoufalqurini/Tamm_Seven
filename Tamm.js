@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const addToCartButtons = document.querySelectorAll('.add-to-cart');
     const cartItemsContainer = document.getElementById('cart-items');
     const checkoutBtn = document.querySelector('.checkout-btn');
-    const totalPriceElement = document.querySelector('.total-price');
+    const totalCostElement = document.getElementById('total-cost');
 
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     let count = cart.length;
@@ -68,8 +68,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function renderCartItems() {
         cartItemsContainer.innerHTML = "";
-        let totalPrice = 0;
-        cart.forEach(item => {
+        let totalCost = 0;
+
+        cart.forEach((item, index) => {
             const itemElement = document.createElement("div");
             itemElement.classList.add("cart-item");
             itemElement.innerHTML = `
@@ -80,15 +81,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
                 <div class="quantity-controls">
                     <button class="quantity-btn decrease">-</button>
-                    <span class="quantity">${item.quantity}</span>
+                    <span class="quantity">${item.quantity || 1}</span>
                     <button class="quantity-btn increase">+</button>
                 </div>
                 <button class="remove-btn"><i class="fa-solid fa-trash-can"></i></button>
             `;
             cartItemsContainer.appendChild(itemElement);
-
-            // تحديث السعر الإجمالي
-            totalPrice += item.price * item.quantity;
 
             // إضافة التعامل مع الأزرار داخل السلة
             const decreaseButton = itemElement.querySelector(".decrease");
@@ -96,31 +94,41 @@ document.addEventListener('DOMContentLoaded', function() {
             const quantityElement = itemElement.querySelector(".quantity");
             const removeButton = itemElement.querySelector(".remove-btn");
 
+            let quantity = item.quantity || 1;
+
             decreaseButton.addEventListener("click", () => {
-                if (item.quantity > 1) {
-                    item.quantity--;
-                    quantityElement.textContent = item.quantity;
-                    localStorage.setItem("cart", JSON.stringify(cart));
-                    renderCartItems();
+                if (quantity > 1) {
+                    quantity--;
+                    quantityElement.textContent = quantity;
+                    item.quantity = quantity;
+                    updateCart();
                 }
             });
 
             increaseButton.addEventListener("click", () => {
-                item.quantity++;
-                quantityElement.textContent = item.quantity;
-                localStorage.setItem("cart", JSON.stringify(cart));
-                renderCartItems();
+                quantity++;
+                quantityElement.textContent = quantity;
+                item.quantity = quantity;
+                updateCart();
             });
 
             removeButton.addEventListener("click", () => {
-                cart = cart.filter(cartItem => cartItem !== item);
+                cart.splice(index, 1);
                 localStorage.setItem("cart", JSON.stringify(cart));
                 count--;
                 updateCartCount();
                 renderCartItems();
             });
+
+            totalCost += item.price * quantity;
         });
-        totalPriceElement.textContent = `التكلفة الكلية: رس ${totalPrice}`;
+
+        totalCostElement.textContent = التكلفة الكلية: رس ${totalCost.toFixed(2)};
+    }
+
+    function updateCart() {
+        localStorage.setItem('cart', JSON.stringify(cart));
+        renderCartItems();
     }
 
     addToCartButtons.forEach(button => {
@@ -131,13 +139,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const existingItem = cart.find(item => item.product === product);
             if (existingItem) {
-                existingItem.quantity++;
+                existingItem.quantity = (existingItem.quantity || 1) + 1;
             } else {
                 cart.push({ product, price, image, quantity: 1 });
             }
 
             localStorage.setItem('cart', JSON.stringify(cart));
-            count = cart.length;
+            count++;
             updateCartCount();
             renderCartItems();
         });
@@ -145,4 +153,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     updateCartCount(); // تحديث عدد المنتجات عند تحميل الصفحة
     renderCartItems();
+
+    // مسح عداد السلة عند إغلاق الصفحة
+    window.addEventListener('beforeunload', function() {
+        localStorage.removeItem('cart');
+    });
 });
