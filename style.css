@@ -681,7 +681,7 @@ button{
     background-color: #f9f9f9; /* لون الخلفية */
     text-align: center; /* محاذاة النص في الوسط */
     align-items: center;
-    width: 950px; /* تحديد عرض المربع */
+    width: 500px; /* تحديد عرض المربع */
 }
 
 .cart-summary p {
