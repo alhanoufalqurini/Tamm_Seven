@@ -365,4 +365,3 @@ document.getElementById('navigateServiceBtnnnnnnnnnnn').addEventListener('click'
 document.getElementById('navigateServiceBtnnnnnnnnnnnn').addEventListener('click', function() {
     window.location.href = 'service00.html';
 });
-/***/
