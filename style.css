@@ -67,15 +67,7 @@ header {
 #navbar i.fa-solid {
     margin-right: 15px; /* يمكن استخدام margin-left أيضًا حسب التصميم */
 }
-/*
-.user-icon {
-    font-size: 30px;
-    color: #FFD700; 
-    cursor: pointer;
-    padding: 10px;
-    margin-right: 20px;
-}*/
-/* تنسيق النموذج */
+
 /* تنسيق النموذج */
 .login-form {
     display: none;
@@ -159,6 +151,7 @@ header {
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     overflow: hidden;
+    
 }
 
 .box img {
@@ -301,6 +294,8 @@ header {
     margin-bottom: auto;
     margin-right: 1.5em; /* توحيد الهامش الأيمن */
     padding: 6px;
+  
+    
 }
 
 /**********/
@@ -308,10 +303,12 @@ header {
     background: #ffffff;
     padding: 5rem 0;
     text-align: center;
+   
 }
 
 #mmenu .title h2 {
     color: #383848;
+
 }
 
 #mmenu .title p {
@@ -323,6 +320,10 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-bottom: 0;
+    background-color: none;
+    
+    
 }
 
 #mmenu .mmenu-items .mmenu-item {
@@ -330,6 +331,7 @@ header {
     justify-content: center;
     align-items: center;
     margin: 40px;
+    
 }
 
 #mmenu .mmenu-items .mmenu-item img {
@@ -345,12 +347,16 @@ header {
     padding-bottom: 10px;
     position: relative;
     text-align: center;
+ 
+    
+    
 }
 
 #mmenu .mmenu-itemss .mmenu-item span {
     position: absolute;
     right: 0px;
     top: 0;
+    
 }
 
 #mmenu .mmenu-items .mmenu-item p {
@@ -668,7 +674,7 @@ button{
 }
 .total-amount {
     font-size: 1.2em;
-    margin-top: 20px;
+    margin-top: 50px;
     text-align: center;
     font-weight: bold;
     color: #194370;
@@ -690,3 +696,156 @@ button{
     margin: 0; /* إزالة الهوامش */
 }
 
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+video {
+    width: 1200px;
+    height: 500px;
+}
+.coupon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    margin-bottom: 30px; /* إضافة مسافة في الأسفل */
+}
+
+#coupon-code {
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    width: 60%;
+    margin-right: 10px;
+    font-size: 1em;
+}
+
+.apply-coupon-btn {
+    background-color: #c1a268;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.apply-coupon-btn:hover {
+    background-color: #a68047;
+}
+#discount-info {
+    margin-top: 10px;
+    font-size: 16px;
+   text-align: center;
+    color: red; /* يمكنك تعديل اللون حسب تفضيلك */
+}
+footer {
+    margin-top: auto;
+}
+/* التأكد من أن الفوتر يبقى في الأسفل */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    margin-top: auto;
+}
+/* style.css */
+#service-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: right;
+    
+}
+
+.service-box {
+    border: 2px solid #c1a268;
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+}
+
+.service-box h3 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.service-box label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.service-box select, 
+.service-box input[type="date"], 
+.service-box input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: right;
+    font-size: 15px;
+
+}
+
+.service-box button {
+    margin-top: 20px;
+    padding: 10px;
+    width: 100%;
+    background-color:#c1a268;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.service-box button:hover {
+    background-color: #a68047;
+}
+.service-select {
+    text-align: right;
+    direction: rtl; /* لتغيير اتجاه النص إلى اليمين */
+    width: 200px; /* يمكنك تعديل العرض حسب الحاجة */
+}
+
+.service-select option {
+    width: 100%; /* لتوسيع عرض الخيارات */
+}
+
+/* التأثير على النصوص داخل الروابط */
+.mmenu-item a {
+    text-decoration: none; /* إزالة أي خطوط تحتية موجودة */
+}
+
+.mmenu-item a h3 {
+    position: relative; /* لتمكين وضع الخط أسفل النص */
+}
+
+.mmenu-item a h3::after {
+    content: ""; /* محتوى الخط تحت النص */
+    position: absolute;
+    left: 0;
+    bottom: -2px; /* المسافة بين النص والخط */
+    width: 100%;
+    height: 2px; /* سمك الخط */
+    background-color: transparent; /* لون الخط الافتراضي */
+    transition: background-color 0.3s ease; /* تأثير الانتقال للون الخط */
+}
+
+.mmenu-item a:hover h3::after {
+    background-color: #c1a268; /* لون الخط عند مرور الماوس */
+}
