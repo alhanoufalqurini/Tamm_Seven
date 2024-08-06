@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"  />
+    <link rel="stylesheet" href="cart.html">
+   
+
+
+
+    <link rel="icon" type="image/x-icon" href="./00.png">
+    <link rel="stylesheet" href="style.css">
+    <title>Tamm seven</title>
+</head>
+<body>
+    <header>
+      <!-- جزء من الهيدر -->
+      <div id="navbar">
+        <i class="fa-solid fa-user" style="font-size:35px;color:#c1a268; cursor: pointer;" onclick="openLoginForm()"></i>
+        <a href="cart.html" class="cart-icon">
+            <i class="fa-solid fa-basket-shopping" style="font-size:35px;color:#c1a268;"></i>
+            <span id="cart-count" class="cart-count"></span>
+        </a>
+        <div id="logo">
+            <img src="./00.png" alt="Logo">
+        </div>
+        <div class="open" onclick="openNav()">&#9776;</div>
+    </div>
+       
+        <!-- Login Form -->
+        <div id="loginForm" class="login-form">
+            <form>
+                <h2>تسجيل الدخول</h2>
+                <input type="text" placeholder="رقم الجوال" required>
+                <input type="password" placeholder="رمز التحقق" required>
+                <button type="submit">الدخول</button>
+                <span class="close" onclick="closeLoginForm()">&times;</span>
+            </form>
+        </div>
+        
+        
+    </header>
+
+    <div class="nav" id="nav">
+        <a href="javascript:void(0)" class="close" onclick="closeNav()">&times;</a>
+        <a href="#title">من نحن</a>
+        <a href="#mmenu">الخدمات الإلكترونية</a>
+        <a href="#menu">الخدمات الميدانية</a>
+        <a href="#part4">المنتجات</a>
+        <a href="cart.html">سلة التسوق</a>
+        <a href="#footer">تواصل معنا</a>
+    </div>
+
+  
+
+    <section id="title">
+        <h2> المنتجات  </h2> 
+    </section>
+    <section id="p">
+        <p>
+            خدمة المنتجات في موقع تم توفر لك تجربة تسوق مريحة وشاملة، بالإضافة إلى دعم الأسر المنتجة. تبدأ العملية بتصفح مجموعة واسعة من المنتجات المتاحة، بما في ذلك سلع متنوعة مثل الإلكترونيات، الملابس، الأدوات المنزلية، والمنتجات الغذائية.
+
+            يمكنك استخدام أدوات البحث والتصفية المتقدمة للعثور على المنتجات التي تبحث عنها بناءً على معايير مثل السعر، العلامة التجارية، والتقييمات. كل منتج يحتوي على صفحة تفصيلية تشمل معلومات شاملة مثل الوصف، المواصفات، الصور، السعر، وتوافر المخزون.
+            
+            عند العثور على المنتج الذي ترغب في شرائه، يمكنك إضافته إلى سلتك ومتابعة عملية الشراء عبر خيارات متعددة للدفع مثل الدفع الإلكتروني، الدفع عند الاستلام، أو الدفع عبر التطبيقات المالية. بعد إتمام الدفع، ستتلقى تأكيدًا للطلب مع تفاصيل حول الشحنة والتسليم.
+            
+            تتيح لك الخدمة أيضًا متابعة حالة طلبك عبر حسابك على الموقع، حيث يمكنك رؤية تحديثات حول حالة الطلب ومعلومات عن الشحن والتسليم. كما توفر لك الفرصة لدعم الأسر المنتجة، حيث يمكنك العثور على منتجات يدوية ومصنوعة محليًا من قبل هذه الأسر، مما يساهم في دعم المشاريع الصغيرة والمنتجات المحلية
+    </section>
+
+
+    <section id="service-form">
+        <div class="service-box">
+            <h3>مكان الاستلام</h3>
+            <label for="service-type">نوع الخدمة</label>
+            <select id="service-type">
+             
+                <option value="المنتجات">المنتجات</option>
+               
+            </select>
+            
+
+            <label for="service-date">تاريخ الخدمة</label>
+            <input type="date" id="service-date">
+
+            
+            <label for="pickup-location"> الدولة</label>
+            <input type="text" id="pickup-location" >
+            <label for="pickup-location">المنطقة </label>
+            <input type="text" id="pickup-location" >
+            <label for="pickup-location"> الحي</label>
+            <input type="text" id="pickup-location" >
+            <button type="submit">تقديم الطلب</button>
+        </div>
+    </section>
+   
+
+
+    
+
+    <footer id="footer">
+        <div class="footer-content">
+            <h3 class="footer-title">
+              
+            <h3>تواصل معنا عبر</h3>
+            <a href="https://x.com/ksatamm?s=21&t=HagB0NQEdiIGiNyw9e6ixw"><i class="fa-brands fa-x-twitter"style="font-size:35px;color:white;"></i> </a>
+           
+            <h6>All rights reserved © 2024</h6>
+        </div>
+    </footer>
+            <script src="Tamm.js"></script>
+        </body>
+        </html>

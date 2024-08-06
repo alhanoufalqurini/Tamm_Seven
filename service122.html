@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"  />
+    <link rel="stylesheet" href="cart.html">
+   
+
+
+
+    <link rel="icon" type="image/x-icon" href="./00.png">
+    <link rel="stylesheet" href="style.css">
+    <title>Tamm seven</title>
+</head>
+<body>
+    <header>
+      <!-- جزء من الهيدر -->
+      <div id="navbar">
+        <i class="fa-solid fa-user" style="font-size:35px;color:#c1a268; cursor: pointer;" onclick="openLoginForm()"></i>
+        <a href="cart.html" class="cart-icon">
+            <i class="fa-solid fa-basket-shopping" style="font-size:35px;color:#c1a268;"></i>
+            <span id="cart-count" class="cart-count"></span>
+        </a>
+        <div id="logo">
+            <img src="./00.png" alt="Logo">
+        </div>
+        <div class="open" onclick="openNav()">&#9776;</div>
+    </div>
+       
+        <!-- Login Form -->
+        <div id="loginForm" class="login-form">
+            <form>
+                <h2>تسجيل الدخول</h2>
+                <input type="text" placeholder="رقم الجوال" required>
+                <input type="password" placeholder="رمز التحقق" required>
+                <button type="submit">الدخول</button>
+                <span class="close" onclick="closeLoginForm()">&times;</span>
+            </form>
+        </div>
+        
+        
+    </header>
+
+    <div class="nav" id="nav">
+        <a href="javascript:void(0)" class="close" onclick="closeNav()">&times;</a>
+        <a href="#title">من نحن</a>
+        <a href="#mmenu">الخدمات الإلكترونية</a>
+        <a href="#menu">الخدمات الميدانية</a>
+        <a href="#part4">المنتجات</a>
+        <a href="cart.html">سلة التسوق</a>
+        <a href="#footer">تواصل معنا</a>
+    </div>
+
+  
+
+    <section id="title">
+        <h2> البيع والشراء  </h2> 
+    </section>
+    <section id="p">
+        <p>
+            خدمة البيع والشراء في موقع تم توفر لك تجربة تجارية شاملة وسهلة الاستخدام. تبدأ العملية بإنشاء حسابك على المنصة، حيث يمكنك إدخال معلوماتك الشخصية وتفاصيل الاتصال لتتمكن من البيع أو الشراء.
+
+            عند الرغبة في الشراء، يمكنك تصفح قائمة المنتجات أو الخدمات المتاحة، والتي تشمل معلومات مفصلة مثل الوصف، السعر، الصور، وتقييمات العملاء. يمكنك استخدام أدوات البحث والتصفية للعثور على ما تحتاجه بسهولة. بعد العثور على المنتج أو الخدمة التي ترغب في شرائها، يمكنك إضافته إلى سلتك، ثم متابعة عملية الدفع عبر خيارات متعددة مثل الدفع الإلكتروني أو الدفع عند الاستلام.
+            
+            إذا كنت ترغب في البيع، يمكنك إدراج منتجاتك أو خدماتك على المنصة عبر ملء نموذج تسجيل المنتج، حيث تقوم بإدخال تفاصيل مثل وصف المنتج، السعر، الصور، وأي معلومات إضافية قد تكون ضرورية. بعد مراجعة وإدراج منتجك، سيتم عرضه في السوق، مما يتيح لك جذب المشترين المهتمين.
+            
+            تتبع عملية البيع والشراء عبر المنصة تتيح لك متابعة حالة الطلبات، التواصل مع المشترين أو البائعين، وتقديم تقييمات وتغذية راجعة حول المعاملات. بفضل أدوات الدعم المتوفرة، يمكنك إدارة الطلبات وحل أي مشكلات قد تطرأ بسهولة.
+            
+            عند إتمام المعاملة، تتولى الخدمة تنسيق عمليات الشحن والتسليم، وتوفر لك معلومات تتعلق بموعد وصول المنتج أو الخدمة. بفضل هذه الخدمة، يمكنك الاستفادة من تجربة شراء وبيع سلسة وموثوقة، مما يعزز من كفاءة التعاملات التجارية عبر الموقع
+    </section>
+
+
+    <section id="service-form">
+        <div class="service-box">
+            <h3>مكان الاستلام</h3>
+            <label for="service-type">نوع الخدمة</label>
+            <select id="service-type">
+             
+                <option value="البيع والشراء">البيع والشراء</option>
+               
+            </select>
+            
+
+            <label for="service-date">تاريخ الخدمة</label>
+            <input type="date" id="service-date">
+
+            
+            <label for="pickup-location"> الدولة</label>
+            <input type="text" id="pickup-location" >
+            <label for="pickup-location">المنطقة </label>
+            <input type="text" id="pickup-location" >
+            <label for="pickup-location"> الحي</label>
+            <input type="text" id="pickup-location" >
+            <button type="submit">تقديم الطلب</button>
+        </div>
+    </section>
+   
+
+
+    
+
+    <footer id="footer">
+        <div class="footer-content">
+            <h3 class="footer-title">
+              
+            <h3>تواصل معنا عبر</h3>
+            <a href="https://x.com/ksatamm?s=21&t=HagB0NQEdiIGiNyw9e6ixw"><i class="fa-brands fa-x-twitter"style="font-size:35px;color:white;"></i> </a>
+           
+            <h6>All rights reserved © 2024</h6>
+        </div>
+    </footer>
+            <script src="Tamm.js"></script>
+        </body>
+        </html>
