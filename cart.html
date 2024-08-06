@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <title>سلة التسوق</title>
-    <link rel="icon" type="image/x-icon" href="./00.png">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -59,6 +58,12 @@
                 <!-- عناصر السلة ستظهر هنا -->
             </div>
             <!-- عنصر لعرض التكلفة الإجمالية -->
+            <div class="coupon-container">
+                <input type="text" id="coupon-code" placeholder="أدخل كوبون الخصم" />
+                <button id="apply-coupon" class="apply-coupon-btn">تطبيق</button>
+            </div>
+            <div id="discount-info"></div>
+
 <div id="total-amount" class="total-amount">
     <div class="cart-summary">
     <p id="total-cost">التكلفة الكلية: رس 0</p>
