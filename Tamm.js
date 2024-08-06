@@ -337,10 +337,11 @@ document.getElementById('navigateServiceBtnnnn').addEventListener('click', funct
 document.getElementById('navigateServiceBtnnnnn').addEventListener('click', function() {
     window.location.href = 'service21.html';
 });
-/**/
+/** */
 document.getElementById('navigateServiceBtnnnnnn').addEventListener('click', function() {
     window.location.href = 'service12.html';
 });
+/**/
 /**/
 document.getElementById('navigateServiceBtnnnnnnn').addEventListener('click', function() {
     window.location.href = 'service112.html';
